@@ -1,16 +1,26 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import React from 'react'
+import {useSelector,useDispatch} from "react-redux";
+import { increamentNum,deccreamentNum } from './actions';
 
 const App = () => {
+  const myStore= useSelector((state)=>state.changeNumber);
+  const dispatch = useDispatch();
   return (
-    <div>
-      <h1>Hello this is testing for git</h1>
-      <h2>Everything is ok</h2>
-      <h3>Confirm code</h3>
-      <Routes>
-        <Route path="*" element={<Navigate to="/" />}/>
-      </Routes>
+    <>
+      <div className='container'>
+        <div className="innerDiv">
+          <h1>Welcome to react redux</h1>
+          <h4>Increament and decrement app</h4>
+          <div className="quantity">
+            <button onClick={()=>dispatch(deccreamentNum(1))}>-</button>
+            <input type="text" value={myStore}/>
+            <button onClick={()=>dispatch(increamentNum(1))}>+</button>
+          </div>
+        </div>
     </div>
+    </>
   )
 }
 
 export default App
+
