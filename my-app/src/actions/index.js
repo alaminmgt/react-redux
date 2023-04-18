@@ -10,3 +10,15 @@ export const deccreamentNum=(num)=>{
         payload : num
     }
 }
+export const multiNum=(num)=>{
+    return {
+        type : "MULTI",
+        payload : num
+    }
+}
+export const divNum=(num)=>{
+    return {
+        type : "DIVISION",
+        payload : num
+    }
+}
